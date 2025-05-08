@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Button Example</title>
+</head>
+<body>
+
+  <h2>Click the Button</h2>
+
+  <button id="myButton">Click Me</button>
+
+  <p id="result"></p>
+
+  <script>
+    document.getElementById("myButton").addEventListener("click", function() {
+      document.getElementById("result").innerText = "Button was clicked!";
+    });
+  </script>
+
+</body>
+</html>

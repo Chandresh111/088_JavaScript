@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reviews Carousel</title>
+  <link rel="stylesheet" href="task2.css">
+</head>
+<body>
+  <h2>Reviews Carousel</h2>
+  <div id="review">
+    <p id="review-text"></p>
+    <button id="prev">Previous</button>
+    <button id="next">Next</button>
+  </div>
+
+  <script>
+    const reviews = [
+      { text: "Great service!" },
+      { text: "Loved the experience." },
+      { text: "Highly recommend this product." },
+      { text: "Hate this one." }
+
+    ];
+
+    let index = 0;
+
+    const reviewText = document.getElementById("review-text");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+
+    function showReview(i) {
+      reviewText.textContent = reviews[i].text;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      index = (index - 1 + reviews.length) % reviews.length;
+      showReview(index);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      index = (index + 1) % reviews.length;
+      showReview(index);
+    });
+
+    showReview(index);
+  </script>
+</body>
+</html>
